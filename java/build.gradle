@@ -79,7 +79,7 @@ artifacts {
     archives jar
     archives sourcesJar
     archives generateJavadocs
-    archives file: file('../universal/libs/jtorctl-briar.jar'), name: 'briarjtorctl', type: 'jar'
+    archives file: file('../universal/libs/jtorctl.jar'), name: 'jtorctl', type: 'jar'
 }
 
 // Copying content from Android over to Java

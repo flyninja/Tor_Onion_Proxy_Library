@@ -43,17 +43,9 @@ import java.util.Map;
 public class OnionProxyManagerEventHandler implements EventHandler {
     private static final Logger LOG = LoggerFactory.getLogger(OnionProxyManagerEventHandler.class);
 
-    public void circuitStatus(String status, String id, List<String> path, Map<String, String> info) {
-        String msg = "CircuitStatus: " + id + " " + status;
-        String purpose = info.get("PURPOSE");
-        if(purpose != null) msg += ", purpose: " + purpose;
-        String hsState = info.get("HS_STATE");
-        if(hsState != null) msg += ", state: " + hsState;
-        String rendQuery = info.get("REND_QUERY");
-        if(rendQuery != null) msg += ", service: " + rendQuery;
-        if(!path.isEmpty()) msg += ", path: " + shortenPath(path);
-        LOG.info(msg);
-    }
+    public void circuitStatus(String status, String circID, String path) {
+		LOG.info(String.format("status: %s circID: %s path: %s", status, circID, path));
+	}
 
     public void streamStatus(String status, String id, String target) {
         LOG.info("streamStatus: status: " + status + ", id: " + id + ", target: " + target);
