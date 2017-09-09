@@ -35,8 +35,8 @@ dependencies {
 
 install {
     repositories.mavenInstaller {
-        addFilter('briarjtorctl') {artifact, file ->
-            artifact.name == 'briarjtorctl'
+        addFilter('jtorctl') {artifact, file ->
+            artifact.name == 'jtorctl'
         }
 
         addFilter('java') {artifact, file ->
@@ -47,8 +47,8 @@ install {
             artifactId = 'ThaliOnionProxyJava'
         }
 
-        pom('briarjtorctl') {
-            artifactId = 'BriarJtorctl'
+        pom('jtorctl') {
+            artifactId = 'Jtorctl'
         }
 
         pom.project {
